@@ -12,4 +12,12 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+<script type="text/javascript">
+    !(function(){
+      let width=document.documentElement.clientWidth;
+      let styleNode=document.createElement('style');
+      styleNode.innerHTML='html{font-size:'+width/16+'px!important}';
+      document.head.appendChild(styleNode)
+    })()
+</script>
 </html>

@@ -5,6 +5,7 @@ import Cart from '../pages/Cart/Cart.vue'
 import Classify from '../pages/Classify/Classify.vue'
 import Home from '../pages/Home/Home.vue'
 import Goods from '../pages/Goods/Goods.vue'
+import Interlayer from '../pages/Interlayer/Interlayer.vue'
 
 Vue.use(Router)
 
@@ -12,27 +13,46 @@ export default new Router({
   routes: [
     {
       path: '/personal',
-      component: Personal
+      component: Personal,
+      meta: {
+        isShow: true
+      }
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      meta: {
+        isShow: true
+      }
     },
     {
       path: '/goods',
-      component: Goods
+      component: Goods,
+      meta: {
+        isShow: true
+      }
     },
     {
       path: '/classify',
-      component: Classify
+      component: Classify,
+      meta: {
+        isShow: true
+      }
     },
     {
       path: '/cart',
-      component: Cart
+      component: Cart,
+      meta: {
+        isShow: true
+      }
     },
     {
       path:'/',
-      redirect:'/home'
+      redirect:'/interlayer'
+    },
+    {
+      path:'/interlayer',
+      component:Interlayer
     }
   ]
 })

@@ -2,7 +2,7 @@
   <div id="app">
 
     <router-view/>
-    <FooterBar/>
+    <FooterBar v-show="$route.meta.isShow"/>
 
   </div>
 </template>
