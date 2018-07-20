@@ -37,8 +37,5 @@ export default {
   },
   [RECEIVE_TOPICLISTS](state,{picklist}){
     state.picklist=picklist
-  },
-  [RECEIVE_CATELISTS](state,{goodList}){
-    state.goodList=goodList
   }
 }

@@ -7,9 +7,9 @@
           <i class="icon"></i>
         </a>
       </div>
-      <div class="content" v-if="tagListsFilter">
+      <div class="content" v-if="tagListsFilter.length">
         <ul class="list">
-          <li class="item" v-for="(tagItem,index) in tagListsFilter" :key="index">
+          <li class="item"  v-for="(tagItem,index) in tagListsFilter" :key="index">
             <a href="javascript:;">
               <div class="shop">
                 <h4 class="title">{{tagItem.name}}</h4>
@@ -23,7 +23,7 @@
           </li>
         </ul>
       </div>
-      <div class="content" v-else></div>
+      <div class="contentbg" v-else></div>
     </div>
   </div>
 </template>
@@ -66,6 +66,10 @@
         height:30/@rem;
         vertical-align: middle;
       }
+    }
+    .contentbg{
+      height:476/@rem;
+      width:750/@rem;
     }
     .content{
       padding-bottom: 8/@rem;

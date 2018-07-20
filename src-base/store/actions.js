@@ -97,15 +97,6 @@ export default {
       commit(RECEIVE_TOPICLISTS,{picklist})
     }
     cb && cb()
-  },
-  
-  //异步获取商品列表
-  async getGoodList({commit}){
-    const result=await reqCateList()
-    if(result.code===0){
-      const goodList=result.data
-      commit(RECEIVE_CATELISTS,{goodList})
-    }
   }
   
   
