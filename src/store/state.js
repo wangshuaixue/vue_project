@@ -8,5 +8,11 @@ export default {
   limitItem:{},  //限时抢购物品
   picklist:[],  //专题精选列表
   goodList:[],  //首页商品列表
-  columns:[], //识物推荐部分
+  columns:[], //识物推荐文章部分
+  recommend:{},  //识物为你推荐
+  tenfifteens:[],  //十点一刻的数组
+  choosezhenpin:[], //严选甄品
+  yxLook:{},  //网易严选Look
+  findMores:[] ,// 严选查看更多
+  
 }

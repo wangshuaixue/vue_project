@@ -109,11 +109,55 @@ export default {
   },
   
   //获取推荐列表
-  async getColumns({commit}){
+  async getColumns({commit},cb){
     const result=await reqColumn()
     if(result.code===0){
       const columns=result.data
       commit(RECEIVE_COLUMNS,{columns})
+    }
+    cb && cb()
+  },
+  //异步获取为你推荐列表
+  async getRecommend({commit}) {
+    const result=await reqRecommend()
+    if(result.code===0){
+      const recommend=result.data
+      commit(RECEIVE_RECOMMEND,{recommend})
+    }
+  },
+  //异步获取十点一刻的数据
+  async getTenfifteens({commit},cb){
+    const result=await reqTenfifteen()
+    if(result.code===0){
+      const tenfifteens=result.data
+      commit(RECEIVE_TENFIFTEENS,{tenfifteens})
+    }
+    cb && cb()
+  },
+  
+  //获取甄品数据
+  async getchoosezhenpin({commit}){
+    const result=await reqZhenpin()
+    if(result.code===0){
+      const choosezhenpin=result.data
+      commit(RECEIVE_ZHENPIN,{choosezhenpin})
+    }
+  },
+  //获取Look
+  async getYxLook({commit}){
+    const result=await reqYxLook()
+    if(result.code===0){
+      const yxLook=result.data
+      commit(RECEIVE_YXLOOK,{yxLook})
+    }
+  },
+  
+  //识物列表中获取更多
+  async getFindMores({commit}){
+    const result=await reqFindMore()
+    if(result.code===0){
+      const findMores=result.data
+      commit(RECEIVE_FINDMORES,{findMores})
     }
   }
   

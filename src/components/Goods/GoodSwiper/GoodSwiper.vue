@@ -3,21 +3,21 @@
     <div class="banner">
       <div class="banner-wrap">
         <div class="swiper-container">
-          <div class="swiper-wrap">
+          <div class="swiper-wrapper">
             <a href="/" class="swiper-slide slide-item">
               <img src="./img/01.jpg" alt="">
               <div class="innerCon">
                 <div class="sub-title">—— 严选推荐 ——</div>
                 <div class="title">夏日小仙女养成记</div>
-                <div class="desc"> 页面内商品每满100减10</div>
+                <div class="desc"> 页面内商品每满179减20</div>
               </div>
             </a>
             <a href="/" class="swiper-slide slide-item">
               <img src="./img/02.jpg" alt="">
               <div class="innerCon">
                 <div class="sub-title">—— 严选推荐 ——</div>
-                <div class="title">夏日小仙女养成记</div>
-                <div class="desc"> 页面内商品每满100减10</div>
+                <div class="title">今天一起做“大儿童”</div>
+                <div class="desc"> 页面内商品每满999减10</div>
               </div>
             </a>
             <a href="/" class="swiper-slide slide-item">
@@ -25,7 +25,7 @@
               <div class="innerCon">
                 <div class="sub-title">—— 严选推荐 ——</div>
                 <div class="title">夏日小仙女养成记</div>
-                <div class="desc"> 页面内商品每满100减10</div>
+                <div class="desc"> 页面内商品每满179减20</div>
               </div>
             </a>
           </div>
@@ -43,9 +43,7 @@
     mounted(){
         this.$nextTick(function(){
           new Swiper('.swiper-container', {
-            pagination: {   // 圆点指示器的容器div
-              el: '.swiper-pagination'
-            },
+            slidesPerView: 'auto',  //占满一页
             loop: true,   // 可以循环轮播
           })
         })
@@ -61,9 +59,8 @@
       padding:24/@rem 0;
       width:690/@rem;
       margin:auto;
-     .swiper-wrap{
+     .swiper-wrapper{
        display: flex;
-       flex-wrap: nowrap;
        .slide-item{
          flex-shrink: 0;
          padding: 0 10/@rem;

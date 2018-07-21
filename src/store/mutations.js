@@ -43,5 +43,20 @@ export default {
   },
   [RECEIVE_COLUMNS](state,{columns}){
     state.columns=columns
+  },
+  [RECEIVE_RECOMMEND](state,{recommend}){
+    state.recommend=recommend
+  },
+  [RECEIVE_TENFIFTEENS](state,{tenfifteens}){
+    state.tenfifteens=tenfifteens
+  },
+  [RECEIVE_ZHENPIN](state,{choosezhenpin}){
+    state.choosezhenpin=choosezhenpin
+  },
+  [RECEIVE_YXLOOK](state,{yxLook}){
+    state.yxLook=yxLook
+  },
+  [RECEIVE_FINDMORES](state,{findMores}){
+    state.findMores=findMores
   }
 }

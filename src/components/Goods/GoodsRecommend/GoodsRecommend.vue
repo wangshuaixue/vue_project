@@ -13,7 +13,6 @@
             <div class="title">{{column.title}}</div>
           </a>
         </div>
-        <div class="list-scroll"></div>
       </div>
     </div>
   </div>
@@ -26,7 +25,7 @@
     mounted(){
       this.$store.dispatch('getColumns',()=>{
         this.$nextTick(() => {
-          new BScroll('.list-scroll', {
+          new BScroll('.rec-wrap', {
             eventPassthrough: 'vertical',
             probeType: 2,  // 因为惯性滑动不会触发
             click: true,   //默认是禁止点击的
@@ -43,15 +42,17 @@
 <style lang='less'>
   @import "../../../common/less/mixins";
   .recommend-wrap{
-    height:286/@rem;
+    height:226/@rem;
     margin-bottom: 20/@rem;
-    padding:32/@rem 30/@rem 28/@rem;
+    padding:32/@rem 30/@rem 28/@rem 30/@rem;
     background-color: #fff;
     .rec-wrap{
       display: flex;
+      overflow: hidden;
       .list-scroll{
         display: flex;
         .item{
+          display: inline-block;
           margin-right: 24/@rem;
           width:164/@rem;
           height:210/@rem;
