@@ -8,4 +8,5 @@ export default {
   limitItem:{},  //限时抢购物品
   picklist:[],  //专题精选列表
   goodList:[],  //首页商品列表
+  columns:[], //识物推荐部分
 }

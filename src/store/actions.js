@@ -106,6 +106,15 @@ export default {
       const goodList=result.data
       commit(RECEIVE_CATELISTS,{goodList})
     }
+  },
+  
+  //获取推荐列表
+  async getColumns({commit}){
+    const result=await reqColumn()
+    if(result.code===0){
+      const columns=result.data
+      commit(RECEIVE_COLUMNS,{columns})
+    }
   }
   
   

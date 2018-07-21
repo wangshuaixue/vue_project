@@ -40,5 +40,8 @@ export default {
   },
   [RECEIVE_CATELISTS](state,{goodList}){
     state.goodList=goodList
+  },
+  [RECEIVE_COLUMNS](state,{columns}){
+    state.columns=columns
   }
 }

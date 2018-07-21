@@ -1,6 +1,6 @@
 <template>
   <div class="w" >
-      <a name="tops" id="topHs"></a>
+      <!--<a name="tops" id="topHs"></a>-->
       <!--首页头部-->
       <HomeHeaderTop/>
       <!--首页轮播-->
@@ -20,7 +20,7 @@
       </a>
       <!--居家好物等遍历卡片列表-->
       <div v-for="(good,index) in goodList" :key="index">
-        <HomeGoodsCart  :good="good"/>
+        <HomeGoodsCart :good="good"/>
       </div>
 
 
