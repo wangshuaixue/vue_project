@@ -58,5 +58,9 @@ export default {
   },
   [RECEIVE_FINDMORES](state,{findMores}){
     state.findMores=findMores
-  }
+  },
+  [RECEIVE_CATEGORYS](state,{cateDetails}){
+    state.cateDetails=cateDetails
+  },
+  
 }

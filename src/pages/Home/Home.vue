@@ -45,7 +45,11 @@
 
       }
     },
-    methods:{
+    mounted(){
+      this.$store.dispatch('getGoodList')
+    },
+
+    /*methods:{
       gotoHeader(){
         let wrap=document.querySelector('.w')
         console.log(wrap)
@@ -58,11 +62,9 @@
         }
 
       }
-    },
-    mounted(){
+    },*/
 
-      this.$store.dispatch('getGoodList')
-    },
+
     computed:{
       ...mapState(['goodList'])
     },

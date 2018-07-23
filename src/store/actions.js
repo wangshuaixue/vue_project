@@ -159,6 +159,16 @@ export default {
       const findMores=result.data
       commit(RECEIVE_FINDMORES,{findMores})
     }
+  },
+  
+  //分类信息
+  async getCateDetails({commit},cb){
+    const result=await reqCategoryData()
+    if(result.code===0){
+      const cateDetails=result.data
+      commit(RECEIVE_CATEGORYS,{cateDetails})
+    }
+    cb && cb()
   }
   
   
