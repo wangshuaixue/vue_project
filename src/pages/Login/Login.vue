@@ -41,19 +41,20 @@
 </template>
 <script>
   import GoodsHeader from '../../components/Goods/GoodsHeader/GoodsHeader.vue'
-  let time=0;
+
   export default {  //配置对象
     data(){
       return {
         phone:'',
-        isOk:true
+        isOk:true,
+        time:0
       }
     },
 
     computed:{
-      verify(){
+      /*verify(){
         return /^1\d{10}$/.test(this.phone)
-      },
+      },*/
 
     },
 

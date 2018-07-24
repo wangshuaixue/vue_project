@@ -2,22 +2,25 @@
   <div class="w" >
       <!--<a name="tops" id="topHs"></a>-->
       <!--首页头部-->
-      <HomeHeaderTop />
+      <HomeHeaderTop  :getIndex="getIndex"/>
       <!--首页轮播-->
-      <HomeSwiper  name="top"/>
+      <HomeSwiper v-if="index===null" name="top"/>
       <!--品牌制造商直供-->
-      <HomeProduce/>
+      <HomeProduce v-if="index===null" />
       <!--首页新品-->
-      <HomeNewProduce/>
+      <HomeNewProduce v-if="index===null" />
       <!--人气推荐-->
-      <HomeRecommend/>
+      <HomeRecommend v-if="index===null" />
       <!--限时抢购-->
-      <HomeLimit/>
+      <HomeLimit v-if="index===null" />
       <!--专题精选-->
-      <HomeHandPick/>
+      <HomeHandPick v-if="index===null" />
+
+      <!--选项卡-->
+      <HomeList v-if="index!==null" :index="index"/>
 
       <!--居家好物等遍历卡片列表-->
-      <div v-for="(good,index) in goodList" :key="index">
+      <div v-for="(good,index) in goodList" :key="index" v-if="index===null">
         <HomeGoodsCart :good="good"/>
       </div>
 
@@ -34,17 +37,19 @@
   import HomeLimit from '../../components/HomeLimit/HomeLimit.vue'
   import HomeHandPick from '../../components/HomeHandPick/HomeHandPick.vue'
   import HomeGoodsCart from '../../components/HomeGoodsCart/HomeGoodsCart.vue'
+  import HomeList from '../../components/HomeList/HomeList.vue'
 
 
   import {mapState} from 'vuex'
   export default {  //配置对象
     data(){
       return{
-
+          index:null
       }
     },
     mounted(){
       this.$store.dispatch('getGoodList')
+
     },
 
     /*methods:{
@@ -61,7 +66,12 @@
 
       }
     },*/
-
+    methods:{
+      getIndex(index){
+        this.index=index
+        console.log(this.index)
+      }
+    },
 
     computed:{
       ...mapState(['goodList'])
@@ -75,7 +85,8 @@
       HomeRecommend,
       HomeLimit,
       HomeHandPick,
-      HomeGoodsCart
+      HomeGoodsCart,
+      HomeList
     },
     watch:{
 

@@ -12,12 +12,12 @@
     </header>
     <div class="scroll">
       <div class="scroll-container">
-        <div class="list">
-          <div class="tab active">
-            <span class="text">推荐</span>
+        <div class="list" >
+          <div class="tab " :class="{active : show(null)}" >
+            <span class="text" @click="checkindex(null) ">推荐</span>
           </div>
-          <div class="tab" v-for="(headCate,index) in headCates" :key="index">
-            <span class="text" >{{headCate.name}}</span>
+          <div class="tab"  v-for="(headCate,index) in headCates" :key="index" :class="{active : show(index)}">
+            <span class="text" @click="checkindex(index)">{{headCate.name}}</span>
           </div>
         </div>
       </div>
@@ -28,11 +28,38 @@
   import BScroll from 'better-scroll'
   import {mapState,mapActions} from 'vuex'
   export default {
+    props:{
+      getIndex:Function,
+    },
+    data(){
+      return {
+        index:null
+      }
+    },
     computed:{
       ...mapState(['headCates'])
-
     },
     methods:{
+      checkindex(index){
+        this.index=index
+        this.getIndex(index)
+      },
+      /*setIndex(index){
+        this.index=index
+      },*/
+     /* activeItem(event){
+        const lists=document.querySelectorAll('.list .tab')
+        const span=document.querySelector('.list span')
+        console.log(lists)
+        for (let i=0;i<lists.length;i++){
+//          lists[i].className=''
+        }
+        console.log(event.target)
+      },*/
+
+      show(index){
+        return this.index===index
+      }
 
     },
     mounted(){
@@ -112,9 +139,12 @@
           .tab{
             position: relative;
             margin-left: 48/@rem;
+            &:first-child{
+              margin-left: 0;
+            }
             &.active{
               color :#b4282d;
-              margin-left: 0;
+              /*margin-left: 0;*/
               &::after{
                 content: '';
                 position: absolute;
@@ -125,6 +155,7 @@
                 background-color: #b4282d;
               }
             }
+
             .text{
               padding: 0 16/@rem;
               line-height: 60/@rem;
