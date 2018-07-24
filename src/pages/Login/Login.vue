@@ -41,6 +41,7 @@
 </template>
 <script>
   import GoodsHeader from '../../components/Goods/GoodsHeader/GoodsHeader.vue'
+  let time=0;
   export default {  //配置对象
     data(){
       return {
@@ -64,25 +65,29 @@
 
       },
       reviveCode(){
-        if(/^1\d{10}$/.test(this.phone)){
-          //发送获取验证码请求
-          let time=30
-          this.intervalId=setInterval(()=> {
-              time--
-              this.$refs.recive.textContent=this.isOk ? `倒计时${time}s` : '获取验证码'
-              console.log(time)
-            if(time===0){   //倒计时完毕清除定时器
-                clearInterval(this.intervalId)
-                this.$refs.recive.textContent='获取验证码'
-            }
-          },1000)
-        }else{
-          //不符合规范不能发送请求
-        }
-        this.isOk=/^1\d{10}$/.test(this.phone)
-        this.$refs.alertTip.textContent=this.phone ? (this.isOk ? '' : '手机号格式错误' ) : ('请输入手机号')
-      }
 
+          if(/^1\d{10}$/.test(this.phone)){
+            //发送获取验证码请求
+//            let time=8
+            if(time===0) {  //避免重复点击，指定时间内只执行一次
+              time = 20;
+              this.intervalId = setInterval(() => {
+                time--
+                this.$refs.recive.textContent = this.isOk ? `倒计时${time}s` : '获取验证码'
+//            console.log(time)
+                if (time <=0) {   //倒计时完毕清除定时器
+                  clearInterval(this.intervalId)
+                  this.$refs.recive.textContent = '获取验证码'
+                }
+              }, 1000)
+            }
+          }else{
+            //不符合规范不能发送请求
+
+          }
+          this.isOk=/^1\d{10}$/.test(this.phone)
+          this.$refs.alertTip.textContent=this.phone ? (this.isOk ? '' : '手机号格式错误' ) : ('请输入手机号')
+        }
 
     },
 
@@ -155,6 +160,7 @@
             height:90/@rem;
           }
           .btns{
+            background-color: #fff;
             position: absolute;
             display: inline-block;
             right:10/@rem;
