@@ -5,7 +5,7 @@
     <!--侧边导航-->
     <Sidebar />
     <!--显示商品区域-->
-    <Details :detail="detail" :activeDetail="cateDetails[0]"/>
+    <Details :detail="detail" :activeDetail="cateDetails[2]"/>
   </div>
 </template>
 <script>
@@ -25,7 +25,6 @@
     methods:{
       getIndex(index){
         this.detail=this.cateDetails[index]
-        console.log(this.detail)
       }
     },
     mounted(){
@@ -33,7 +32,6 @@
       //订阅消息
       PubSub.subscribe('getIndex',(msg,index)=>{
         this.getIndex(index)
-        console.log(index)
       })
     },
     computed:{

@@ -1,7 +1,7 @@
 <template>
   <div class="goodscon-wrap">
     <!--头部-->
-    <GoodsHeader/>
+    <GoodsHeader name="top"/>
     <!--轮播-->
     <GoodSwiper/>
     <!--买手的推荐列表-->
@@ -16,6 +16,9 @@
     <GoodLook/>
     <!--更多精彩好物-->
     <GoodFindMore/>
+
+    <!--回顶部-->
+    <a class="goTop" href="#top"></a>
 
   </div>
 </template>
@@ -46,6 +49,16 @@
 <style lang="less">
   @import "../../common/less/mixins";
   .goodscon-wrap{
-    height:6000/@rem;
+    background-color: #eeeeee;
+    .goTop{
+      background-image: url('./img/top.png');
+      background-size: 100% 100%;
+      width:82/@rem;
+      height:82/@rem;
+      position: fixed;
+      bottom: 120/@rem;
+      right:30/@rem;
+      z-index: 20;
+    }
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="produce">
+    <div class="produce" v-if="tagListsFilter">
       <div class="header-top">
         <a href="javascript:;">
           <span>品牌制造商直供</span>
@@ -9,7 +9,7 @@
       </div>
       <div class="content" v-if="tagListsFilter.length">
         <ul class="list">
-          <li class="item"  v-for="(tagItem,index) in tagListsFilter" :key="index">
+          <li class="item"  v-for="(tagItem,index) in tagListsFilter" :key="index"  v-if="tagItem">
             <a href="javascript:;">
               <div class="shop">
                 <h4 class="title">{{tagItem.name}}</h4>
@@ -23,8 +23,9 @@
           </li>
         </ul>
       </div>
-      <div class="contentbg" v-else></div>
+      <!--<div class="contentbg" v-else></div>-->
     </div>
+    <!--<div class="probg" v-else></div>-->
   </div>
 </template>
 <script>
@@ -70,6 +71,7 @@
     .contentbg{
       height:476/@rem;
       width:750/@rem;
+      background-color: #fff;
     }
     .content{
       padding-bottom: 8/@rem;
@@ -126,5 +128,10 @@
         }
       }
     }
+  }
+  .probg{
+    width: 750/@rem;
+    height:614/@rem;
+    background-color: #fff;
   }
 </style>

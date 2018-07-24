@@ -3,7 +3,7 @@
     <div class="swiper-container" v-if="focusList.length">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(focus,index) in focusList" :key="index">
-          <img :src="focus.picUrl" alt="">
+          <img v-lazy="focus.picUrl" alt="">
         </div>
       </div>
       <!-- 如果需要分页器 -->

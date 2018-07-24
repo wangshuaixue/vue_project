@@ -1,7 +1,10 @@
 <template>
   <div id="app">
+    <!--保证切换路由的时候不会去掉之前的路由-->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
 
-    <router-view/>
     <FooterBar v-show="$route.meta.isShow"/>
 
   </div>
@@ -19,6 +22,6 @@ export default {
 
 <style lang="less">
   body{
-    background-color: #eeeeee;
+    background-color: #fff;
   }
 </style>

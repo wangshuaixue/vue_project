@@ -41,7 +41,8 @@
   @import '../../common/less/mixins';
 
   .cart-wrap{
-    height:100%;
+    height:1334/@rem;
+    background-color: #eeeeee;
     overflow: hidden;
     .header-cart{
       height:88/@rem;

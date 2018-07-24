@@ -6,6 +6,7 @@ import Classify from '../pages/Classify/Classify.vue'
 import Home from '../pages/Home/Home.vue'
 import Goods from '../pages/Goods/Goods.vue'
 import Interlayer from '../pages/Interlayer/Interlayer.vue'
+import Login from '../pages/Login/Login.vue'
 
 Vue.use(Router)
 
@@ -53,6 +54,10 @@ export default new Router({
     {
       path:'/interlayer',
       component:Interlayer
+    },
+    {
+      path:'/login',
+      component:Login
     }
   ]
 })

@@ -2,9 +2,9 @@
   <div class="w" >
       <!--<a name="tops" id="topHs"></a>-->
       <!--首页头部-->
-      <HomeHeaderTop/>
+      <HomeHeaderTop />
       <!--首页轮播-->
-      <HomeSwiper/>
+      <HomeSwiper  name="top"/>
       <!--品牌制造商直供-->
       <HomeProduce/>
       <!--首页新品-->
@@ -15,16 +15,14 @@
       <HomeLimit/>
       <!--专题精选-->
       <HomeHandPick/>
-      <!--回顶部-->
-      <a class="goTop" target="#topHs">
-      </a>
+
       <!--居家好物等遍历卡片列表-->
       <div v-for="(good,index) in goodList" :key="index">
         <HomeGoodsCart :good="good"/>
       </div>
 
-
-
+    <!--回顶部-->
+    <a class="goTop" href="#top"></a>
   </div>
 </template>
 <script>
@@ -87,11 +85,10 @@
 <style lang="less">
   @import '../../common/less/mixins';
     .w{
-      #topHs{
-        display: inline-block;
-      }
+      background-color: #eeeeee;
+
       .goTop{
-        display: block;
+       /* display: block;*/
         background-image: url('./img/top.png');
         background-size: 100% 100%;
         width:82/@rem;

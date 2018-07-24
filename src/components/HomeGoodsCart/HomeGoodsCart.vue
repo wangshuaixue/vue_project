@@ -9,7 +9,7 @@
           <li class="item" v-for="(goodItem,index) in good.itemList" :key="index">
             <a href="javascript:;" class="goods">
               <div class="top">
-                <img :src="goodItem.primaryPicUrl" alt="">
+                <img v-lazy="goodItem.primaryPicUrl" alt="">
                 <div class="detail">{{goodItem.simpleDesc}}</div>
               </div>
               <div class="tagw">

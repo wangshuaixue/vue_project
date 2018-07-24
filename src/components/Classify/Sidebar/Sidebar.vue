@@ -24,7 +24,7 @@
   export default {
     data(){
       return {
-        index:0
+        index:2
       }
     },
     mounted(){
@@ -35,7 +35,7 @@
             click: true,   //默认是禁止点击的
             scrollY:true
           })
-          console.log(this.scroll)
+//          console.log(this.scroll)
         })
       })
 

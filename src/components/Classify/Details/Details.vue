@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="detail-con" v-if="detail.name">
+    <div class="detail-con" v-if="detail.bannerUrl">
       <div class="head-img">
         <img :src="detail.bannerUrl" alt="">
       </div>
@@ -46,6 +46,7 @@
         </ul>
       </div>
     </div>
+
   </div>
 </template>
 <script>
