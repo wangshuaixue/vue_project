@@ -50,7 +50,7 @@
   export default {
 
     mounted(){
-      this.$store.dispatch('getTenfifteens',()=>{
+      this.$store.dispatch('.getTenfifteens',()=>{
         this.$nextTick(function () {
           new Swiper('.swiper-container1', {
             slidesPerView: 'auto',  //占满一页

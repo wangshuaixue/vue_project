@@ -1,21 +1,21 @@
 <template>
   <div class="column">
-    <div class="recommend-wrap">
-      <div class="rec-wrap">
-        <div class="list-scroll" v-if="columns.length">
-          <a href="/" class="item" v-for="(column,index) in columns">
-            <img :src="column.picUrl" alt="" >
+  <div class="recommend-wrap">
+    <div class="rec-wrap">
+      <div class="list-scroll" v-if="columns.length">
+        <a href="/" class="item" v-for="(column,index) in columns">
+          <img :src="column.picUrl" alt="" >
 
-            <div class="num-wrap">
-              <div class="num">{{column.articleCount}}</div>
-            </div>
+          <div class="num-wrap">
+            <div class="num">{{column.articleCount}}</div>
+          </div>
 
-            <div class="title">{{column.title}}</div>
-          </a>
-        </div>
+          <div class="title">{{column.title}}</div>
+        </a>
       </div>
     </div>
   </div>
+</div>
 </template>
 <script>
   import {mapState} from 'vuex'

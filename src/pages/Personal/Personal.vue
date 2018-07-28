@@ -53,6 +53,7 @@
     components:{
       GoodsHeader
     }
+
   }
 </script>
 <style lang="less">

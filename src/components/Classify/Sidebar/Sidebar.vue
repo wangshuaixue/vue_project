@@ -2,9 +2,7 @@
   <div class="slideW">
       <div class="sidebar-wrap">
         <ul class="sidebar">
-          <!--<li class="item active" >-->
-            <!--<a href="javascript:;" class="text">推荐专区1</a>-->
-          <!--</li>-->
+
           <li class="item " v-for="(detail,index) in cateDetails" :key="index"
               @click="getIndex(index)"  :class="{active : clickIndex(index) } ">
             <a href="javascript:;" class="text">{{detail.name}}</a>
@@ -31,11 +29,9 @@
       this.$store.dispatch('getCateDetails',()=>{
         this.$nextTick(()=>{  //之前不能滑动的原因：没有在nextTick的回调里面执行，这里写成了普通的function函数导致出错
           this.scroll=new BScroll('.sidebar-wrap', {
-//          probeType: 2,  // 因为惯性滑动不会触发
             click: true,   //默认是禁止点击的
             scrollY:true
           })
-//          console.log(this.scroll)
         })
       })
 
